@@ -1248,6 +1248,30 @@
       }, 1000);
     }
 
+    // Video Pre-Warmup & Blob Fetch (from oldCode.html pattern for 0ms mobile playback)
+    const INTRO_VIDEO_URL = "https://res.cloudinary.com/dticzwbrv/video/upload/v1786946080/Aniversaryflower_zj350r.mp4";
+    let videoBlobReady = false;
+
+    if (introVideo) {
+      introVideo.load();
+      fetch(INTRO_VIDEO_URL, { mode: 'cors' })
+        .then(res => {
+          if (!res.ok) throw new Error('Fetch failed');
+          return res.blob();
+        })
+        .then(blob => {
+          const blobUrl = URL.createObjectURL(blob);
+          if (introVideo && introVideo.paused && !videoBlobReady && (introVideo.currentTime || 0) === 0) {
+            videoBlobReady = true;
+            introVideo.src = blobUrl;
+            introVideo.load();
+          }
+        })
+        .catch(err => {
+          console.log("Background video blob pre-fetch fallback to direct stream:", err);
+        });
+    }
+
     function openIntro() {
       if (introOpened) return;
       introOpened = true;
@@ -1279,7 +1303,6 @@
     }
 
     introLayer.addEventListener('click', openIntro);
-    introLayer.addEventListener('touchstart', openIntro, { passive: true });
 
     // Page loader dismiss logic: close when video is loaded & ready, or max 3 seconds
     const pageLoader = document.getElementById('page-loader');

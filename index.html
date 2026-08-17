@@ -1202,6 +1202,30 @@
     const scrollIndicator = document.getElementById('scroll-down-indicator');
     let opened = false;
 
+    // Video Pre-Warmup & Blob Fetch (from oldCode.html pattern for 0ms mobile playback)
+    const VIDEO_URL = "https://res.cloudinary.com/dticzwbrv/video/upload/v1786530126/Invelopegoldenblue_v8tslz.mp4";
+    let videoBlobReady = false;
+
+    if (curtainVideo) {
+      curtainVideo.load();
+      fetch(VIDEO_URL, { mode: 'cors' })
+        .then(res => {
+          if (!res.ok) throw new Error('Fetch failed');
+          return res.blob();
+        })
+        .then(blob => {
+          const blobUrl = URL.createObjectURL(blob);
+          if (curtainVideo && curtainVideo.paused && !videoBlobReady && (curtainVideo.currentTime || 0) === 0) {
+            videoBlobReady = true;
+            curtainVideo.src = blobUrl;
+            curtainVideo.load();
+          }
+        })
+        .catch(err => {
+          console.log("Background video blob pre-fetch fallback to direct stream:", err);
+        });
+    }
+
     function openCurtain() {
       if (opened) return;
       opened = true;
@@ -1236,7 +1260,7 @@
         }, 1000);
       };
 
-      // Fallback
+      // Safety Fallback
       setTimeout(() => {
         if (!document.body.classList.contains('unlocked')) {
             tryAutoPlayMusic();
@@ -1247,11 +1271,10 @@
               scrollIndicator.classList.add('visible');
             }, 1000);
         }
-      }, 6000);
+      }, 10000);
     }
 
     curtainLayer.addEventListener('click', openCurtain);
-    curtainLayer.addEventListener('touchstart', openCurtain, { passive: true });
 
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
