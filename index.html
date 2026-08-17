@@ -1211,9 +1211,7 @@
       const playPromise = curtainVideo.play();
       if (playPromise !== undefined) {
         playPromise.catch(e => {
-          console.log('Unmuted playback failed, falling back to muted video play:', e);
-          curtainVideo.muted = true;
-          curtainVideo.play().catch(err => console.log('Video play error:', err));
+          console.log('Playback error:', e);
         });
       }
 

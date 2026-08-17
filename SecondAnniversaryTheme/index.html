@@ -1256,9 +1256,8 @@
       introVideo.muted = false;
       const playPromise = introVideo.play();
       if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          introVideo.muted = true;
-          introVideo.play().catch(() => {});
+        playPromise.catch(e => {
+          console.log('Playback error:', e);
         });
       }
 
