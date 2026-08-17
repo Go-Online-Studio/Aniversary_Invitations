@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>2nd Anniversary — Aarav &amp; Ananya</title>
+  <meta name="description" content="Join Aarav &amp; Ananya in celebrating two years of love at their 2nd Anniversary Celebration on September 21, 2026.">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2nd Anniversary — Aarav &amp; Ananya">
+  <meta property="og:description" content="Join Aarav &amp; Ananya in celebrating two years of love at their 2nd Anniversary Celebration on September 21, 2026.">
+  <meta property="og:image" content="images/og_image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:image:alt" content="2nd Anniversary Celebration — Aarav &amp; Ananya">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="2nd Anniversary — Aarav &amp; Ananya">
+  <meta name="twitter:description" content="Join Aarav &amp; Ananya in celebrating two years of love at their 2nd Anniversary Celebration on September 21, 2026.">
+  <meta name="twitter:image" content="images/og_image.jpg">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+  <link rel="dns-prefetch" href="https://res.cloudinary.com">
+  <link rel="preload" href="https://res.cloudinary.com/dticzwbrv/video/upload/v1786946080/Aniversaryflower_zj350r.mp4" as="video" type="video/mp4" crossorigin="anonymous">
+  <link rel="preload" href="images/watercolor_bg.avif" as="image">
+  <link rel="preload" href="images/hero_couple.png" as="image">
+  <link rel="preload" href="images/AniversaryflowerThumb.webp" as="image">
+
+  <style>
+    :root {
+      --pink: #f4b8c8;
+      --pink-deep: #e891a8;
+      --blue: #a8cce8;
+      --blue-deep: #7eb3db;
+      --cream: #fdf8f5;
+      --text: #4a3f45;
+      --text-muted: rgba(74, 63, 69, 0.75);
+      --glass: rgba(255, 255, 255, 0.42);
+      --glass-border: rgba(255, 255, 255, 0.65);
+      --max-w: 480px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #1a1a1a;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden;
+    }
+    body.unlocked { overflow: auto; }
+
+    h1, h2, h3, .serif { font-family: 'Cormorant Garamond', serif; }
+    .script { font-family: 'Great Vibes', cursive; }
+
+    #app {
+      width: 100%;
+      max-width: var(--max-w);
+      min-height: 100vh;
+      margin: 0 auto;
+      position: relative;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      background: var(--cream) url('images/watercolor_bg.avif') center top / 100% auto repeat-y;
+    }
+
+    /* Minimal Page Loader */
+    #page-loader {
+      position: fixed;
+      inset: 0;
+      background: #111111;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #page-loader.loaded {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .loader-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .loader-spinner {
+      width: 44px;
+      height: 44px;
+      border: 2px solid rgba(244, 184, 200, 0.2);
+      border-top-color: var(--pink-deep);
+      border-right-color: var(--blue-deep);
+      border-radius: 50%;
+      animation: loaderSpin 0.9s cubic-bezier(0.6, 0.2, 0.4, 0.9) infinite;
+    }
+    .loader-monogram {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.2rem;
+      color: var(--pink);
+      letter-spacing: 0.05em;
+      margin-bottom: -4px;
+      text-shadow: 0 0 12px rgba(244, 184, 200, 0.35);
+      animation: monogramPulse 2s ease-in-out infinite alternate;
+    }
+    .loader-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 500;
+    }
+    @keyframes loaderSpin {
+      to { transform: rotate(360deg); }
+    }
+    @keyframes monogramPulse {
+      0% { opacity: 0.75; transform: scale(0.97); }
+      100% { opacity: 1; transform: scale(1.03); }
+    }
+
+    /* Landscape Warning */
+    #landscape-warning {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #1a1a1a;
+      color: var(--pink-deep);
+      z-index: 999999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+    #landscape-warning svg {
+      margin-bottom: 20px;
+      animation: rotatePhone 2s infinite ease-in-out;
+    }
+    #landscape-warning h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    #landscape-warning p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 280px;
+    }
+    @keyframes rotatePhone {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(-90deg); }
+      100% { transform: rotate(-90deg); }
+    }
+    @media screen and (orientation: landscape) and (max-height: 600px) {
+      #landscape-warning { display: flex; }
+      #app { display: none !important; }
+      #petals-canvas { display: none !important; }
+      #audio-ctrl { display: none !important; }
+    }
+
+    /* Falling Petals Canvas */
+    #petals-canvas {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: var(--max-w);
+      height: 100%;
+      pointer-events: none;
+      z-index: 50;
+    }
+
+    /* Video Intro Overlay */
+    #intro-layer {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: var(--max-w);
+      height: 100vh;
+      z-index: 200;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 1s ease;
+      cursor: pointer;
+    }
+    #intro-layer.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #intro-layer.skip-intro { display: none; }
+    #intro-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+    .tap-overlay {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      right: 0;
+      z-index: 210;
+      text-align: center;
+      animation: tapPulse 2s infinite;
+      padding: 20px;
+    }
+    .tap-text {
+      font-family: 'Cormorant Garamond', serif;
+      color: #fff;
+      font-size: 1.35rem;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      padding: 12px 24px;
+      border-radius: 30px;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    @keyframes tapPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.04); opacity: 0.92; }
+    }
+
+    /* Scroll Indicator — arrow only */
+    .scroll-down-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 24px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .scroll-down-indicator.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .scroll-down-indicator.hidden {
+      opacity: 0 !important;
+      pointer-events: none;
+    }
+    .scroll-down-indicator svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--pink-deep);
+      animation: scrollBounce 1.5s infinite ease-in-out;
+    }
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateY(0); opacity: 0.65; }
+      50% { transform: translateY(10px); opacity: 1; }
+    }
+
+    #main-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Scroll Reveal Base */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.85s ease, transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Glass Card */
+    .glass-card {
+      background: var(--glass);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(180, 140, 160, 0.18);
+    }
+
+    /* ── HERO ── */
+    .hero-sec {
+      padding: 42px 12px 28px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #3b2d35;
+      margin-bottom: 20px;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(180, 140, 160, 0.15);
+      display: inline-block;
+      font-weight: 600;
+    }
+    .hero-img-wrap {
+      width: 78%;
+      max-width: 320px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(232, 145, 168, 0.25);
+      border: 3px solid rgba(255, 255, 255, 0.8);
+    }
+    .hero-img-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-names {
+      font-size: 3.2rem;
+      color: var(--pink-deep);
+      margin: 18px 0 6px;
+      line-height: 1.1;
+      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9), 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      color: #3b2d35;
+      letter-spacing: 0.14em;
+      margin-bottom: 28px;
+      padding: 6px 16px;
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(180, 140, 160, 0.15);
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    /* Countdown */
+    .countdown {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 68px;
+    }
+    .countdown-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      border: 2px solid rgba(255, 255, 255, 0.7);
+    }
+    .countdown-item:nth-child(odd) .countdown-circle {
+      background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+    }
+    .countdown-item:nth-child(even) .countdown-circle {
+      background: linear-gradient(135deg, var(--blue), var(--blue-deep));
+    }
+    .countdown-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-top: 6px;
+      color: #3b2d35;
+      font-weight: 700;
+      padding: 3px 8px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(180, 140, 160, 0.15);
+      display: inline-block;
+    }
+
+    /* ── MEMORIES CAROUSEL ── */
+    .memories-sec {
+      padding: 48px 0 40px;
+    }
+    .section-title {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--text);
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+      padding: 0 12px;
+    }
+    .embla { overflow: hidden; width: 100%; }
+    .embla__container { display: flex; }
+    .embla__slide {
+      flex: 0 0 88%;
+      min-width: 0;
+      padding: 0 6px;
+      margin-left: 6px;
+    }
+    .embla__slide:first-child { margin-left: 12px; }
+    .memory-card {
+      padding: 14px 12px;
+      text-align: center;
+    }
+    .memory-card img {
+      width: 100%;
+      aspect-ratio: 3/2;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+    .memory-card h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 26px;
+      color: var(--pink-deep);
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+    .memory-card p {
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+
+    /* ── LOVE NOTE ── */
+    .love-note-sec {
+      padding: 16px 12px 42px;
+    }
+    .love-note {
+      padding: 24px 16px;
+      text-align: center;
+    }
+    .love-note p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--text);
+      font-style: italic;
+    }
+    .love-note .sign-off {
+      margin-top: 16px;
+      font-style: normal;
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.6rem;
+      color: var(--blue-deep);
+    }
+
+    /* ── CELEBRATION SCHEDULE ── */
+    .itinerary-sec {
+      padding: 42px 12px 48px;
+    }
+    .itinerary-sec .section-title {
+      font-size: 1.35rem;
+      letter-spacing: 0.18em;
+      margin-bottom: 30px;
+    }
+    .schedule {
+      position: relative;
+      padding: 8px 0 4px;
+    }
+    .schedule::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 24px;
+      bottom: 24px;
+      width: 2px;
+      background: linear-gradient(to bottom, #c9a882, #d4b896, #c9a882);
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+    .schedule-item {
+      display: grid;
+      grid-template-columns: 1fr 18px 1fr;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 36px;
+      position: relative;
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.85s ease, transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .schedule-item:last-child { margin-bottom: 0; }
+    .schedule-item.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .schedule-item:nth-child(1) { transition-delay: 0s; }
+    .schedule-item:nth-child(2) { transition-delay: 0.08s; }
+    .schedule-item:nth-child(3) { transition-delay: 0.16s; }
+    .schedule-item:nth-child(4) { transition-delay: 0.24s; }
+    .schedule-item:nth-child(5) { transition-delay: 0.32s; }
+    .schedule-item:nth-child(even) .schedule-text { text-align: right; }
+    .schedule-item:nth-child(odd) .schedule-text { text-align: left; }
+    .schedule-art {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 124px;
+      height: 124px;
+      border-radius: 50%;
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 2px solid var(--glass-border);
+      box-shadow: 0 8px 24px rgba(180, 140, 160, 0.18);
+      margin: 0 auto;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .schedule-art:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 28px rgba(180, 140, 160, 0.28);
+    }
+    .schedule-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      filter: drop-shadow(0 2px 8px rgba(180, 140, 160, 0.2));
+    }
+    .schedule-node {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px rgba(232, 145, 168, 0.35);
+      justify-self: center;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+    .schedule-text {
+      padding: 10px 8px;
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: 14px;
+      box-shadow: 0 6px 24px rgba(180, 140, 160, 0.12);
+    }
+    .schedule-time {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+    }
+    .schedule-event {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.35;
+      font-weight: 500;
+    }
+    .schedule-desc {
+      display: block;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      line-height: 1.45;
+      font-style: italic;
+    }
+
+    /* ── RSVP ── */
+    .rsvp-sec {
+      padding: 16px 12px 64px;
+    }
+    .rsvp-card {
+      padding: 22px 14px;
+    }
+    .rsvp-deadline {
+      text-align: center;
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      color: #3b2d35;
+      font-weight: 600;
+      margin-bottom: 20px;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 12px;
+      display: inline-block;
+      width: 100%;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .form-control {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.55);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      resize: vertical;
+    }
+    .form-control:focus {
+      border-color: var(--blue-deep);
+      box-shadow: 0 0 0 3px rgba(126, 179, 219, 0.2);
+    }
+    .radio-group {
+      display: flex;
+      gap: 8px;
+    }
+    .radio-btn {
+      flex: 1;
+      cursor: pointer;
+    }
+    .radio-btn input { display: none; }
+    .radio-btn span {
+      display: block;
+      text-align: center;
+      padding: 10px 6px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.45);
+      font-size: 0.76rem;
+      transition: all 0.2s;
+    }
+    .radio-btn input:checked + span {
+      background: linear-gradient(135deg, var(--blue), var(--blue-deep));
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 4px 12px rgba(126, 179, 219, 0.35);
+    }
+    .radio-group--wrap { flex-wrap: wrap; }
+    .radio-group--wrap .radio-btn { min-width: calc(50% - 4px); }
+    .checkbox-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: 0.82rem;
+      color: var(--text);
+    }
+    .checkbox-item input {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.5);
+      margin-right: 12px;
+      flex-shrink: 0;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .checkbox-item input:checked {
+      background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+      border-color: transparent;
+    }
+    .checkbox-item input:checked::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .checkbox-item span { line-height: 1.35; }
+    .form-control.is-invalid {
+      border-color: #e57373;
+      box-shadow: 0 0 0 3px rgba(229, 115, 115, 0.15);
+    }
+    .invalid-feedback {
+      display: none;
+      font-size: 0.72rem;
+      color: #c62828;
+      margin-top: 5px;
+    }
+    .form-control.is-invalid + .invalid-feedback { display: block; }
+    .form-alert {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      margin-bottom: 16px;
+      border-radius: 10px;
+      background: rgba(229, 115, 115, 0.12);
+      border: 1px solid rgba(229, 115, 115, 0.3);
+      font-size: 0.78rem;
+      color: #c62828;
+    }
+    .form-alert.visible { display: flex; }
+    .form-divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.45);
+      margin: 4px 0 18px;
+    }
+    .btn-submit {
+      width: 100%;
+      padding: 13px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-deep));
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(126, 179, 219, 0.35);
+      transition: transform 0.2s;
+    }
+    .btn-submit:active { transform: scale(0.98); }
+
+    /* Audio FAB */
+    #audio-ctrl {
+      position: fixed;
+      bottom: 25px;
+      right: calc(50% - 240px + 25px);
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+      color: #fff;
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 100;
+      box-shadow: 0 5px 18px rgba(232, 145, 168, 0.45);
+    }
+    @media (max-width: 480px) {
+      #audio-ctrl { right: 16px; bottom: 20px; }
+    }
+
+    /* Footer */
+    .footer {
+      padding: 28px 12px 42px;
+      text-align: center;
+    }
+    .footer-card {
+      padding: 28px 16px 22px;
+      margin-bottom: 18px;
+    }
+    .footer h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8rem;
+      color: var(--pink-deep);
+      margin-bottom: 12px;
+      text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
+    }
+    .footer-message {
+      font-size: 0.88rem;
+      color: #3b2d35;
+      line-height: 1.75;
+      font-weight: 500;
+    }
+    .footer-signature {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: var(--text);
+      font-weight: 600;
+      margin-top: 10px;
+      letter-spacing: 0.05em;
+    }
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue-deep);
+      box-shadow: 0 4px 12px rgba(180, 140, 160, 0.15);
+      transition: all 0.25s ease;
+    }
+    .footer-social a:hover {
+      transform: translateY(-2px);
+      background: #fff;
+      box-shadow: 0 6px 16px rgba(126, 179, 219, 0.35);
+    }
+    .made-with-love {
+      font-size: 0.75rem;
+      color: #4a3f45;
+      font-weight: 500;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      box-shadow: 0 2px 10px rgba(180, 140, 160, 0.12);
+      display: inline-block;
+    }
+    .made-with-love a {
+      color: var(--pink-deep);
+      text-decoration: none;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Minimal Loader -->
+  <div id="page-loader" role="status" aria-label="Loading celebration invitation">
+    <div class="loader-content">
+      <div class="loader-monogram">A &amp; A</div>
+      <div class="loader-spinner"></div>
+      <span class="loader-text">Loading Invitation</span>
+    </div>
+  </div>
+
+  <!-- Landscape Warning -->
+  <div id="landscape-warning">
+    <svg viewBox="0 0 24 24" width="64" height="64" fill="currentColor" aria-hidden="true">
+      <path d="M16 1H8C6.34 1 5 2.34 5 4v16c0 1.66 1.34 3 3 3h8c1.66 0 3-1.34 3-3V4c0-1.66-1.34-3-3-3zm1 18H7V5h10v14z"/>
+    </svg>
+    <h2>Please Rotate Your Device</h2>
+    <p>This invitation is beautifully crafted for portrait viewing.</p>
+  </div>
+
+  <!-- Petals Canvas -->
+  <canvas id="petals-canvas" aria-hidden="true"></canvas>
+
+  <!-- Audio Control -->
+  <button id="audio-ctrl" type="button" aria-label="Toggle background music">
+    <svg id="icon-muted" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="display:none;">
+      <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+    </svg>
+    <svg id="icon-unmuted" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+      <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+    </svg>
+  </button>
+  <audio id="bg-music" loop preload="auto">
+    <source src="images/folk-acoustic-summer-walk-152722.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Video Intro Overlay -->
+  <div id="intro-layer">
+    <video id="intro-video" playsinline webkit-playsinline preload="auto" poster="images/AniversaryflowerThumb.webp" disablePictureInPicture>
+      <source src="https://res.cloudinary.com/dticzwbrv/video/upload/v1786946080/Aniversaryflower_zj350r.mp4" type="video/mp4">
+    </video>
+    <div class="tap-overlay" id="tap-overlay">
+      <span class="tap-text">Tap anywhere to open</span>
+    </div>
+  </div>
+
+  <div id="app">
+    <div id="main-content">
+
+      <!-- Section 1: Hero & Countdown -->
+      <section class="hero-sec">
+        <p class="hero-tagline reveal">A Celebration of Two Years &amp; Counting</p>
+        <div class="hero-img-wrap reveal">
+          <img src="images/hero_couple.png" alt="Aarav and Ananya" loading="eager" fetchpriority="high">
+        </div>
+        <h1 class="hero-names script reveal">Aarav &amp; Ananya</h1>
+        <p class="hero-subtitle reveal">2nd Anniversary Celebration</p>
+
+        <div class="countdown reveal" id="countdown">
+          <div class="countdown-item">
+            <div class="countdown-circle" id="cd-days">00</div>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-circle" id="cd-hours">00</div>
+            <span class="countdown-label">Hrs</span>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-circle" id="cd-mins">00</div>
+            <span class="countdown-label">Mins</span>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-circle" id="cd-secs">00</div>
+            <span class="countdown-label">Secs</span>
+          </div>
+        </div>
+
+        <div class="scroll-down-indicator" id="scroll-down-indicator" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </div>
+      </section>
+
+      <!-- Section 2: Memories Carousel -->
+      <section class="memories-sec">
+        <h2 class="section-title reveal">Our Memories</h2>
+        <div class="embla reveal" id="memories-carousel">
+          <div class="embla__container">
+            <div class="embla__slide">
+              <div class="memory-card glass-card">
+                <img src="images/memory_first_dance.png" alt="Our First Dance" loading="lazy">
+                <h3>Our First Dance</h3>
+                <p>The moment the music started and everything else faded away — our first dance as one.</p>
+              </div>
+            </div>
+            <div class="embla__slide">
+              <div class="memory-card glass-card">
+                <img src="images/memory_travel.png" alt="Travel Adventures" loading="lazy">
+                <h3>Travel Adventures</h3>
+                <p>From spontaneous road trips to far-off destinations, every journey brought us closer.</p>
+              </div>
+            </div>
+            <div class="embla__slide">
+              <div class="memory-card glass-card">
+                <img src="images/memory_first_home.png" alt="Our First Home" loading="lazy">
+                <h3>Our First Home Together</h3>
+                <p>Building a cozy nest filled with laughter, late-night talks, and shared dreams.</p>
+              </div>
+            </div>
+            <div class="embla__slide">
+              <div class="memory-card glass-card">
+                <img src="images/memory_growing.png" alt="Growing Together" loading="lazy">
+                <h3>Growing Together</h3>
+                <p>Planting roots side by side — nurturing love, patience, and a beautiful life together.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Love Note -->
+      <section class="love-note-sec">
+        <div class="love-note glass-card reveal">
+          <p>Two years ago, we promised forever to one another. Today, we celebrate every laugh, every adventure, and every quiet moment that made us who we are. Thank you for being part of our story.</p>
+          <p class="sign-off">With Love, Aarav &amp; Ananya</p>
+        </div>
+      </section>
+
+      <!-- Section 3: Celebration Schedule -->
+      <section class="itinerary-sec">
+        <h2 class="section-title reveal">Celebration Itinerary</h2>
+        <div class="schedule">
+
+          <div class="schedule-item">
+            <div class="schedule-art">
+              <img src="images/itinerary_welcome.png" alt="Champagne welcome toast" loading="lazy">
+            </div>
+            <div class="schedule-node" aria-hidden="true"></div>
+            <div class="schedule-text">
+              <span class="schedule-time">6:00 PM</span>
+              <span class="schedule-event">The Welcome Gathering</span>
+              <span class="schedule-desc">Champagne toast &amp; warm welcomes</span>
+            </div>
+          </div>
+
+          <div class="schedule-item">
+            <div class="schedule-text">
+              <span class="schedule-time">7:00 PM</span>
+              <span class="schedule-event">Our Anniversary Feast</span>
+              <span class="schedule-desc">A curated dinner celebrating two years of love</span>
+            </div>
+            <div class="schedule-node" aria-hidden="true"></div>
+            <div class="schedule-art">
+              <img src="images/itinerary_feast.png" alt="Anniversary feast" loading="lazy">
+            </div>
+          </div>
+
+          <div class="schedule-item">
+            <div class="schedule-art">
+              <img src="images/itinerary_cocktails.png" alt="Cocktail classes" loading="lazy">
+            </div>
+            <div class="schedule-node" aria-hidden="true"></div>
+            <div class="schedule-text">
+              <span class="schedule-time">7:00 PM</span>
+              <span class="schedule-event">Specialized Cocktail Classes</span>
+              <span class="schedule-desc">Mix, sip &amp; celebrate together</span>
+            </div>
+          </div>
+
+          <div class="schedule-item">
+            <div class="schedule-text">
+              <span class="schedule-time">8:30 PM</span>
+              <span class="schedule-event">Moments &amp; Milestones</span>
+              <span class="schedule-desc">Speeches, toasts &amp; anniversary cake</span>
+            </div>
+            <div class="schedule-node" aria-hidden="true"></div>
+            <div class="schedule-art">
+              <img src="images/itinerary_cake.png" alt="Cake and champagne" loading="lazy">
+            </div>
+          </div>
+
+          <div class="schedule-item">
+            <div class="schedule-art">
+              <img src="images/itinerary_dance.png" alt="Dance and merriment" loading="lazy">
+            </div>
+            <div class="schedule-node" aria-hidden="true"></div>
+            <div class="schedule-text">
+              <span class="schedule-time">10:00 PM</span>
+              <span class="schedule-event">Dance &amp; Merriment</span>
+              <span class="schedule-desc">Music, dancing &amp; joyful celebration</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Section 4: RSVP -->
+      <section class="rsvp-sec">
+        <h2 class="section-title reveal">Please RSVP</h2>
+        <div class="rsvp-card glass-card reveal">
+          <p class="rsvp-deadline">Kindly respond by — 14TH SEPTEMBER 2026 —</p>
+
+          <div class="form-alert" id="form-alert">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            <span>Please complete all required fields before submitting.</span>
+          </div>
+
+          <form id="rsvpForm" novalidate>
+            <div class="form-group">
+              <label for="guestName">Name(s) *</label>
+              <input type="text" id="guestName" class="form-control" placeholder="Your full name" required>
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="guestPhone">Phone *</label>
+              <input type="tel" id="guestPhone" class="form-control" placeholder="Your phone number" required>
+              <div class="invalid-feedback">Please enter a valid phone number.</div>
+            </div>
+
+            <div class="form-group">
+              <label>Will you join us? *</label>
+              <div class="radio-group">
+                <label class="radio-btn">
+                  <input type="radio" name="attending" value="Joyfully Attending" checked>
+                  <span>Joyfully Attending</span>
+                </label>
+                <label class="radio-btn">
+                  <input type="radio" name="attending" value="Regretfully Declining">
+                  <span>Regretfully Declining</span>
+                </label>
+              </div>
+            </div>
+
+            <div id="extra-fields">
+              <div class="form-group">
+                <label for="guestCount">Number of Guests</label>
+                <select id="guestCount" class="form-control">
+                  <option value="1">Just Me (1)</option>
+                  <option value="2">2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                  <option value="5+">5+ Guests</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="plusOne">Plus-One Name (if applicable)</label>
+                <input type="text" id="plusOne" class="form-control" placeholder="Guest accompanying you">
+              </div>
+
+              <div class="form-divider"></div>
+
+              <div class="form-group">
+                <label>Events You'll Attend</label>
+                <div class="checkbox-list">
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="events" value="Welcome Gathering (6:00 PM)" checked>
+                    <span>Welcome Gathering — 6:00 PM</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="events" value="Anniversary Feast (7:00 PM)" checked>
+                    <span>Anniversary Feast — 7:00 PM</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="events" value="Cocktail Classes (7:00 PM)" checked>
+                    <span>Cocktail Classes — 7:00 PM</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="events" value="Moments & Milestones (8:30 PM)" checked>
+                    <span>Moments &amp; Milestones — 8:30 PM</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="events" value="Dance & Merriment (10:00 PM)" checked>
+                    <span>Dance &amp; Merriment — 10:00 PM</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Most excited for...</label>
+                <div class="radio-group radio-group--wrap">
+                  <label class="radio-btn">
+                    <input type="radio" name="excited" value="The Feast">
+                    <span>The Feast</span>
+                  </label>
+                  <label class="radio-btn">
+                    <input type="radio" name="excited" value="Cocktails">
+                    <span>Cocktails</span>
+                  </label>
+                  <label class="radio-btn">
+                    <input type="radio" name="excited" value="Speeches & Cake">
+                    <span>Speeches &amp; Cake</span>
+                  </label>
+                  <label class="radio-btn">
+                    <input type="radio" name="excited" value="Dancing">
+                    <span>Dancing</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="dietary">Dietary Requirements</label>
+                <textarea id="dietary" class="form-control" rows="2" placeholder="Allergies, vegetarian, vegan, etc."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="songRequest">Song Request</label>
+                <input type="text" id="songRequest" class="form-control" placeholder="A song to get us on the dance floor">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="wishes">Wishes for Aarav &amp; Ananya</label>
+              <textarea id="wishes" class="form-control" rows="3" placeholder="Share a memory, blessing, or anniversary wish..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Send RSVP via WhatsApp</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer reveal">
+        <div class="footer-card glass-card">
+          <h2>Thank You</h2>
+          <p class="footer-message">We look forward to sharing this joy with you all.</p>
+          <p class="footer-signature">With Love, Aarav &amp; Ananya</p>
+          <div class="footer-social">
+            <a target="_blank" href="https://www.instagram.com/?hl=en" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a target="_blank" href="https://www.facebook.com/" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <p class="made-with-love">Designed with ❤️ by <a href="https://shriiitrackingsolution.in/" target="_blank" rel="noreferrer">STS</a></p>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Embla Carousel -->
+  <script src="https://cdn.jsdelivr.net/npm/embla-carousel@8.5.2/embla-carousel.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/embla-carousel-autoplay@8.5.2/embla-carousel-autoplay.umd.js"></script>
+
+  <script>
+    /* ═══════════════════════════════════════════
+       LOAD, REFRESH & RESIZE LOGIC
+    ═══════════════════════════════════════════ */
+    // Ensure browser does not restore previous scroll position on refresh
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    const introLayer = document.getElementById('intro-layer');
+    const introVideo = document.getElementById('intro-video');
+    const tapOverlay = document.getElementById('tap-overlay');
+    const scrollIndicator = document.getElementById('scroll-down-indicator');
+    let introOpened = false;
+
+    // Immediately trigger buffering of the video
+    if (introVideo) {
+      introVideo.load();
+    }
+
+    function unlockPage(showScrollArrow) {
+      document.body.classList.add('unlocked');
+      introLayer.classList.add('hidden');
+      setTimeout(() => {
+        introLayer.style.display = 'none';
+        if (showScrollArrow && window.scrollY <= 50) {
+          scrollIndicator.classList.add('visible');
+        }
+      }, 1000);
+    }
+
+    function openIntro() {
+      if (introOpened) return;
+      introOpened = true;
+      tapOverlay.style.display = 'none';
+
+      introVideo.muted = false;
+      const playPromise = introVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          introVideo.muted = true;
+          introVideo.play().catch(() => {});
+        });
+      }
+
+      introVideo.onended = () => {
+        tryAutoPlayMusic();
+        unlockPage(true);
+      };
+    }
+
+    introLayer.addEventListener('click', openIntro);
+    introLayer.addEventListener('touchstart', openIntro, { passive: true });
+
+    // Page loader dismiss logic: close when video is loaded & ready, or max 3 seconds
+    const pageLoader = document.getElementById('page-loader');
+    let loaderDismissed = false;
+
+    function hideLoader() {
+      if (loaderDismissed) return;
+      loaderDismissed = true;
+      if (pageLoader) {
+        pageLoader.classList.add('loaded');
+      }
+    }
+
+    if (introVideo) {
+      if (introVideo.readyState >= 3) {
+        hideLoader();
+      } else {
+        introVideo.addEventListener('canplaythrough', hideLoader, { once: true });
+        introVideo.addEventListener('loadeddata', hideLoader, { once: true });
+      }
+    }
+
+    window.addEventListener('load', () => {
+      window.scrollTo(0, 0);
+      if (introVideo && introVideo.readyState >= 2) {
+        hideLoader();
+      }
+    });
+
+    // Maximum 3 seconds loader duration safety limit
+    setTimeout(() => {
+      hideLoader();
+    }, 3000);
+
+    // Debounced resize handler that resizes canvas without resetting user scroll position
+    let resizeTimer;
+    function handleResizeDebounced() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (typeof resizeCanvas === 'function') {
+          resizeCanvas();
+        }
+      }, 150);
+    }
+    window.addEventListener('resize', handleResizeDebounced, { passive: true });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        scrollIndicator.classList.add('hidden');
+      } else if (introOpened) {
+        scrollIndicator.classList.remove('hidden');
+      }
+    }, { passive: true });
+
+    /* ═══════════════════════════════════════════
+       COUNTDOWN TIMER
+    ═══════════════════════════════════════════ */
+    const eventDate = new Date('2026-09-21T18:00:00');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = eventDate - now;
+      if (diff <= 0) {
+        ['cd-days', 'cd-hours', 'cd-mins', 'cd-secs'].forEach(id => {
+          document.getElementById(id).textContent = '00';
+        });
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+      document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+      document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    /* ═══════════════════════════════════════════
+       SCROLL REVEAL (Intersection Observer)
+    ═══════════════════════════════════════════ */
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+    document.querySelectorAll('.reveal, .schedule-item').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    /* ═══════════════════════════════════════════
+       EMBLA CAROUSEL — Autoplay & Loop
+    ═══════════════════════════════════════════ */
+    const emblaNode = document.getElementById('memories-carousel');
+    if (emblaNode && typeof EmblaCarousel !== 'undefined') {
+      const autoplayPlugin = EmblaCarouselAutoplay({
+        delay: 3500,
+        stopOnInteraction: false,
+        stopOnMouseEnter: false
+      });
+      EmblaCarousel(emblaNode, { loop: true, align: 'center', dragFree: false }, [autoplayPlugin]);
+    }
+
+    /* ═══════════════════════════════════════════
+       AUDIO CONTROLLER
+    ═══════════════════════════════════════════ */
+    const audioBtn = document.getElementById('audio-ctrl');
+    const audioEl = document.getElementById('bg-music');
+    const iconMuted = document.getElementById('icon-muted');
+    const iconUnmuted = document.getElementById('icon-unmuted');
+    audioEl.volume = 0.25;
+
+    function tryAutoPlayMusic() {
+      audioEl.play().then(() => {
+        iconMuted.style.display = 'none';
+        iconUnmuted.style.display = 'block';
+      }).catch(() => {
+        iconMuted.style.display = 'block';
+        iconUnmuted.style.display = 'none';
+      });
+    }
+
+    audioBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (audioEl.paused) {
+        audioEl.play();
+        iconMuted.style.display = 'none';
+        iconUnmuted.style.display = 'block';
+      } else {
+        audioEl.pause();
+        iconUnmuted.style.display = 'none';
+        iconMuted.style.display = 'block';
+      }
+    });
+
+    /* ═══════════════════════════════════════════
+       RSVP — WhatsApp Integration
+    ═══════════════════════════════════════════ */
+    const rsvpForm = document.getElementById('rsvpForm');
+    const guestNameInput = document.getElementById('guestName');
+    const guestPhoneInput = document.getElementById('guestPhone');
+    const extraFields = document.getElementById('extra-fields');
+    const formAlert = document.getElementById('form-alert');
+
+    function toggleExtraFields(show) {
+      extraFields.style.display = show ? 'block' : 'none';
+    }
+
+    document.querySelectorAll('input[name="attending"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        toggleExtraFields(radio.value === 'Joyfully Attending' && radio.checked);
+      });
+    });
+
+    function hideFormAlert() {
+      if (guestNameInput.value.trim() && guestPhoneInput.value.trim()) {
+        formAlert.classList.remove('visible');
+      }
+    }
+
+    guestNameInput.addEventListener('input', () => {
+      if (guestNameInput.value.trim()) guestNameInput.classList.remove('is-invalid');
+      hideFormAlert();
+    });
+    guestPhoneInput.addEventListener('input', () => {
+      if (guestPhoneInput.value.trim()) guestPhoneInput.classList.remove('is-invalid');
+      hideFormAlert();
+    });
+
+    rsvpForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = guestNameInput.value.trim();
+      const phone = guestPhoneInput.value.trim();
+      let isValid = true;
+
+      if (!name) {
+        guestNameInput.classList.add('is-invalid');
+        isValid = false;
+      }
+      if (!phone) {
+        guestPhoneInput.classList.add('is-invalid');
+        isValid = false;
+      }
+
+      if (!isValid) {
+        formAlert.classList.add('visible');
+        formAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        if (!name) guestNameInput.focus();
+        else guestPhoneInput.focus();
+        return;
+      }
+
+      formAlert.classList.remove('visible');
+
+      const attending = document.querySelector('input[name="attending"]:checked').value;
+      const guestCount = document.getElementById('guestCount').value;
+      const plusOne = document.getElementById('plusOne').value.trim();
+      const excited = document.querySelector('input[name="excited"]:checked')?.value || 'Not specified';
+      const dietary = document.getElementById('dietary').value.trim();
+      const songRequest = document.getElementById('songRequest').value.trim();
+      const wishes = document.getElementById('wishes').value.trim();
+
+      const eventNodes = document.querySelectorAll('input[name="events"]:checked');
+      const events = Array.from(eventNodes).map(el => el.value).join(', ') || 'None';
+
+      let message = `*RSVP — Aarav & Ananya's 2nd Anniversary*\n\n`;
+      message += `*Name:* ${name}\n`;
+      message += `*Phone:* ${phone}\n`;
+      message += `*Attending:* ${attending}\n`;
+
+      if (attending === 'Joyfully Attending') {
+        message += `*Number of Guests:* ${guestCount}\n`;
+        if (plusOne) message += `*Plus-One:* ${plusOne}\n`;
+        message += `*Events Attending:*\n${events}\n`;
+        message += `*Most Excited For:* ${excited}\n`;
+        if (dietary) message += `*Dietary Requirements:* ${dietary}\n`;
+        if (songRequest) message += `*Song Request:* ${songRequest}\n`;
+      }
+
+      if (wishes) message += `\n*Wishes for the Couple:*\n${wishes}\n`;
+      message += `\n_Sent via Anniversary Invitation_`;
+
+      const waPhone = '918200482291';
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      const base = isMobile ? 'https://api.whatsapp.com/send' : 'https://web.whatsapp.com/send';
+      window.open(`${base}?phone=${waPhone}&text=${encodeURIComponent(message)}`, '_blank');
+
+      rsvpForm.reset();
+      guestNameInput.classList.remove('is-invalid');
+      guestPhoneInput.classList.remove('is-invalid');
+      toggleExtraFields(true);
+    });
+
+    /* ═══════════════════════════════════════════
+       FALLING PETALS (Canvas)
+    ═══════════════════════════════════════════ */
+    const canvas = document.getElementById('petals-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      const appEl = document.getElementById('app');
+
+      function resizeCanvas() {
+        canvas.width = appEl ? appEl.offsetWidth : window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resizeCanvas();
+
+      const petals = [];
+      const petalCount = 40;
+      const colors = [
+        'rgba(244, 184, 200, 0.55)',
+        'rgba(232, 145, 168, 0.5)',
+        'rgba(168, 204, 232, 0.55)',
+        'rgba(126, 179, 219, 0.45)'
+      ];
+
+      class Petal {
+        constructor() { this.reset(true); }
+        reset(initial) {
+          this.x = Math.random() * canvas.width;
+          this.y = initial ? Math.random() * canvas.height : -20;
+          this.size = Math.random() * 5 + 3;
+          this.speedY = Math.random() * 1.2 + 0.4;
+          this.speedX = (Math.random() - 0.5) * 0.8;
+          this.angle = Math.random() * 360;
+          this.spin = (Math.random() - 0.5) * 3;
+          this.color = colors[Math.floor(Math.random() * colors.length)];
+        }
+        update() {
+          this.y += this.speedY;
+          this.x += this.speedX + Math.sin(this.y * 0.02) * 0.3;
+          this.angle += this.spin;
+          if (this.y > canvas.height + 20) this.reset(false);
+        }
+        draw() {
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.rotate(this.angle * Math.PI / 180);
+          ctx.fillStyle = this.color;
+          ctx.beginPath();
+          ctx.ellipse(0, 0, this.size, this.size * 0.55, 0, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      for (let i = 0; i < petalCount; i++) petals.push(new Petal());
+
+      (function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        petals.forEach(p => { p.update(); p.draw(); });
+        requestAnimationFrame(animate);
+      })();
+    }
+  </script>
+</body>
+</html> 
