@@ -23,6 +23,8 @@
   <meta name="twitter:image" content="images/og_image.jpg">
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <!-- Fancybox for Galleries -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
   <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
   <link rel="dns-prefetch" href="https://res.cloudinary.com">
   <link rel="preload" href="https://res.cloudinary.com/dticzwbrv/video/upload/v1786946080/Aniversaryflower_zj350r.mp4" as="video" type="video/mp4" crossorigin="anonymous">
@@ -428,13 +430,43 @@
       padding: 14px 12px;
       text-align: center;
     }
+    .memory-img-link {
+      display: block;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 14px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      cursor: pointer;
+      text-decoration: none;
+    }
     .memory-card img {
       width: 100%;
       aspect-ratio: 3/2;
       object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 14px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .memory-img-link:hover img {
+      transform: scale(1.03);
+    }
+    .memory-expand-badge {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      color: #fff;
+      border-radius: 20px;
+      padding: 4px 8px;
+      font-size: 0.62rem;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      opacity: 0.9;
+      pointer-events: none;
     }
     .memory-card h3 {
       font-family: 'Great Vibes', cursive;
@@ -946,35 +978,63 @@
         </div>
       </section>
 
-      <!-- Section 2: Memories Carousel -->
+      <!-- Section 2: Memories Carousel with Fancybox Gallery -->
       <section class="memories-sec">
         <h2 class="section-title reveal">Our Memories</h2>
         <div class="embla reveal" id="memories-carousel">
           <div class="embla__container">
             <div class="embla__slide">
               <div class="memory-card glass-card">
-                <img src="images/memory_first_dance.png" alt="Our First Dance" loading="lazy">
+                <a href="images/memory_first_dance.png" class="memory-img-link" data-fancybox="memories-gallery" data-caption="Our First Dance — The moment the music started and everything else faded away.">
+                  <img src="images/memory_first_dance.png" alt="Our First Dance" loading="lazy">
+                  <span class="memory-expand-badge">
+                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                    </svg> Tap to view
+                  </span>
+                </a>
                 <h3>Our First Dance</h3>
                 <p>The moment the music started and everything else faded away — our first dance as one.</p>
               </div>
             </div>
             <div class="embla__slide">
               <div class="memory-card glass-card">
-                <img src="images/memory_travel.png" alt="Travel Adventures" loading="lazy">
+                <a href="images/memory_travel.png" class="memory-img-link" data-fancybox="memories-gallery" data-caption="Travel Adventures — From spontaneous road trips to far-off destinations.">
+                  <img src="images/memory_travel.png" alt="Travel Adventures" loading="lazy">
+                  <span class="memory-expand-badge">
+                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                    </svg> Tap to view
+                  </span>
+                </a>
                 <h3>Travel Adventures</h3>
                 <p>From spontaneous road trips to far-off destinations, every journey brought us closer.</p>
               </div>
             </div>
             <div class="embla__slide">
               <div class="memory-card glass-card">
-                <img src="images/memory_first_home.png" alt="Our First Home" loading="lazy">
+                <a href="images/memory_first_home.png" class="memory-img-link" data-fancybox="memories-gallery" data-caption="Our First Home Together — Building a cozy nest filled with laughter and shared dreams.">
+                  <img src="images/memory_first_home.png" alt="Our First Home" loading="lazy">
+                  <span class="memory-expand-badge">
+                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                    </svg> Tap to view
+                  </span>
+                </a>
                 <h3>Our First Home Together</h3>
                 <p>Building a cozy nest filled with laughter, late-night talks, and shared dreams.</p>
               </div>
             </div>
             <div class="embla__slide">
               <div class="memory-card glass-card">
-                <img src="images/memory_growing.png" alt="Growing Together" loading="lazy">
+                <a href="images/memory_growing.png" class="memory-img-link" data-fancybox="memories-gallery" data-caption="Growing Together — Planting roots side by side, nurturing love and patience.">
+                  <img src="images/memory_growing.png" alt="Growing Together" loading="lazy">
+                  <span class="memory-expand-badge">
+                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                    </svg> Tap to view
+                  </span>
+                </a>
                 <h3>Growing Together</h3>
                 <p>Planting roots side by side — nurturing love, patience, and a beautiful life together.</p>
               </div>
@@ -1212,9 +1272,10 @@
     </div>
   </div>
 
-  <!-- Embla Carousel -->
+  <!-- Embla Carousel & Fancybox Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/embla-carousel@8.5.2/embla-carousel.umd.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/embla-carousel-autoplay@8.5.2/embla-carousel-autoplay.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 
   <script>
     /* ═══════════════════════════════════════════
@@ -1400,16 +1461,43 @@
     });
 
     /* ═══════════════════════════════════════════
-       EMBLA CAROUSEL — Autoplay & Loop
+       EMBLA CAROUSEL & FANCYBOX GALLERY
     ═══════════════════════════════════════════ */
+    let autoplayPlugin = null;
     const emblaNode = document.getElementById('memories-carousel');
     if (emblaNode && typeof EmblaCarousel !== 'undefined') {
-      const autoplayPlugin = EmblaCarouselAutoplay({
+      autoplayPlugin = EmblaCarouselAutoplay({
         delay: 3500,
         stopOnInteraction: false,
         stopOnMouseEnter: false
       });
       EmblaCarousel(emblaNode, { loop: true, align: 'center', dragFree: false }, [autoplayPlugin]);
+    }
+
+    if (typeof Fancybox !== 'undefined') {
+      Fancybox.bind('[data-fancybox="memories-gallery"]', {
+        loop: true,
+        Thumbs: false,
+        Toolbar: {
+          display: {
+            left: ["infobar"],
+            middle: [],
+            right: ["slideshow", "fullscreen", "close"],
+          },
+        },
+        on: {
+          reveal: () => {
+            if (autoplayPlugin && autoplayPlugin.stop) {
+              autoplayPlugin.stop();
+            }
+          },
+          close: () => {
+            if (autoplayPlugin && autoplayPlugin.play) {
+              autoplayPlugin.play();
+            }
+          }
+        }
+      });
     }
 
     /* ═══════════════════════════════════════════
