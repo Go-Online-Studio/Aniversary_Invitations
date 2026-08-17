@@ -1207,11 +1207,22 @@
       opened = true;
       tapOverlay.style.display = 'none';
 
+      // Pre-unlock BGM audio context on this user gesture so browser allows autoplay after video ends (from oldCode.html)
+      const bgm = document.getElementById('bg-music');
+      if (bgm) {
+        bgm.muted = true;
+        bgm.play().then(() => bgm.pause()).catch(() => {});
+        bgm.muted = false;
+        bgm.currentTime = 0;
+      }
+
       curtainVideo.muted = false;
+      curtainVideo.volume = 1.0;
       const playPromise = curtainVideo.play();
       if (playPromise !== undefined) {
         playPromise.catch(e => {
-          console.log('Playback error:', e);
+          console.warn('Unmuted video play error (fallback retry):', e);
+          curtainVideo.play().catch(err => console.log('Final video play failure:', err));
         });
       }
 
