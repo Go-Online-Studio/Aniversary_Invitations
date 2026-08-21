@@ -580,13 +580,13 @@
         object-fit: cover;
       }
       .memory-caption {
-        padding: 16px 16px 17px;
+        padding: 12px;
       }
       .memory-caption h3 {
         margin: 0 0 5px;
         color: var(--ink);
         font-family: var(--serif);
-        font-size: 1.16rem;
+        font-size: 16px;
         font-weight: 500;
         letter-spacing: 0.05em;
         text-transform: uppercase;
@@ -601,21 +601,32 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 6px;
-        margin-top: 15px;
+        gap: 8px;
+        margin-top: 18px;
       }
       .carousel-dot {
-        width: 6px;
-        height: 6px;
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        border: 0;
         border-radius: 50%;
         background: #d6d4ca;
+        cursor: pointer;
+        outline: none;
         transition:
           transform 0.25s ease,
-          background 0.25s ease;
+          background 0.25s ease,
+          width 0.25s ease,
+          border-radius 0.25s ease;
+      }
+      .carousel-dot:hover {
+        background: #b8b3a5;
       }
       .carousel-dot.active {
+        width: 22px;
+        border-radius: 4px;
         background: var(--peach);
-        transform: scale(1.25);
+        transform: none;
       }
 
       .schedule {
@@ -2021,12 +2032,7 @@
               </article>
             </div>
           </div>
-          <div class="carousel-status" aria-hidden="true">
-            <span class="carousel-dot active"></span>
-            <span class="carousel-dot"></span>
-            <span class="carousel-dot"></span>
-            <span class="carousel-dot"></span>
-          </div>
+          <div class="carousel-status" id="carousel-dots" aria-label="Journey carousel pagination" role="tablist"></div>
         </section>
 
         <section class="section schedule reveal" id="schedule">
@@ -2355,7 +2361,7 @@
           music = document.getElementById("bg-music"),
           musicToggle = document.getElementById("music-toggle"),
           invitationOpened = false;
-        music.volume = 0.22;
+        music.volume = 0.8;
         function setMusicState(isPlaying) {
           musicToggle.classList.toggle("is-muted", !isPlaying);
           musicToggle.setAttribute(
@@ -2445,24 +2451,44 @@
         });
 
         var emblaRoot = document.getElementById("memories-carousel"),
-          dots = Array.prototype.slice.call(
-            document.querySelectorAll(".carousel-dot"),
-          ),
+          dotsContainer = document.getElementById("carousel-dots"),
+          dots = [],
           embla,
           autoplayTimer;
+
         function updateDots() {
-          if (!embla) return;
+          if (!embla || !dots.length) return;
           var selected = embla.selectedScrollSnap();
           dots.forEach(function (dot, index) {
             dot.classList.toggle("active", index === selected);
           });
         }
+
+        function generateDots() {
+          if (!embla || !dotsContainer) return;
+          dotsContainer.innerHTML = "";
+          var snapList = embla.scrollSnapList();
+          dots = snapList.map(function (_, index) {
+            var dot = document.createElement("button");
+            dot.className = "carousel-dot";
+            dot.setAttribute("type", "button");
+            dot.setAttribute("aria-label", "Go to slide " + (index + 1));
+            dot.addEventListener("click", function () {
+              embla.scrollTo(index);
+            });
+            dotsContainer.appendChild(dot);
+            return dot;
+          });
+          updateDots();
+        }
+
         function stopAutoplay() {
           if (autoplayTimer) {
             window.clearInterval(autoplayTimer);
             autoplayTimer = null;
           }
         }
+
         function startAutoplay() {
           stopAutoplay();
           if (
@@ -2471,18 +2497,24 @@
           )
             return;
           autoplayTimer = window.setInterval(function () {
-            embla.scrollNext();
+            if (embla.canScrollNext()) {
+              embla.scrollNext();
+            } else {
+              embla.scrollTo(0);
+            }
           }, 4300);
         }
+
         if (window.EmblaCarousel && emblaRoot) {
           embla = window.EmblaCarousel(emblaRoot, {
-            loop: true,
-            align: "center",
+            align: "start",
+            containScroll: "trimSnaps",
+            loop: false,
             skipSnaps: false,
           });
+          generateDots();
           embla.on("select", updateDots);
-          embla.on("reInit", updateDots);
-          updateDots();
+          embla.on("reInit", generateDots);
           emblaRoot.addEventListener("pointerdown", stopAutoplay);
           emblaRoot.addEventListener("pointerup", function () {
             window.setTimeout(startAutoplay, 1200);
