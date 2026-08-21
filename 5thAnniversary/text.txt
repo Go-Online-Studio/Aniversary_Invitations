@@ -1,0 +1,1 @@
+fab music icon not changing on click and that canvas pettals are tottaly hidden so put on top but below envelope 
