@@ -43,5 +43,5 @@ Act as an expert frontend developer and UI/UX designer. I need a single-file HTM
 * **Redesigned RSVP**: Create a beautiful, responsive form including fields for Name, Phone, Guest Count, Dietary Preferences, and a Message. Use Vanilla JS to capture this data, format it into a text message, and dispatch it directly to a WhatsApp API link on submission.
 
 
-* **Mandatory Footer**: The bottom of the page must contain the exact credit line: `Designed with ❤️ by <a href="[https://shriiitrackingsolution.in/](https://shriiitrackingsolution.in/)" target="_blank">STS</a>`.
+* **Mandatory Footer**: The bottom of the page must contain the exact credit line: `Designed by <a href="https://invitebox.in/" target="_blank">Invite&nbsp;Box</a>`.
 
