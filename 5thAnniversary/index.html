@@ -2343,12 +2343,9 @@
         <path d="m17 10 4 4m0-4-4 4" />
       </svg>
     </button>
-    <audio
-      id="bg-music"
-      loop
-      preload="metadata"
-      src="images/folk-acoustic-summer-walk-152722.mp3"
-    ></audio>
+    <audio id="bg-music" loop preload="auto" playsinline webkit-playsinline>
+      <source src="images/folk-acoustic-summer-walk-152722.mp3" type="audio/mpeg" />
+    </audio>
     <script src="https://cdn.jsdelivr.net/npm/embla-carousel@8.5.2/embla-carousel.umd.js"></script>
     <script>
       (function () {
@@ -2397,6 +2394,8 @@
           }, 3200);
         }
         entry.addEventListener("pointerdown", openInvitation, { once: true });
+        entry.addEventListener("click", openInvitation, { once: true });
+        entry.addEventListener("touchstart", openInvitation, { once: true, passive: true });
         entry.addEventListener("keydown", function (event) {
           if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
@@ -2404,9 +2403,14 @@
           }
         });
         document.addEventListener("pointerdown", startMusic, { once: true });
+        document.addEventListener("click", startMusic, { once: true });
+        document.addEventListener("touchstart", startMusic, { once: true, passive: true });
         musicToggle.addEventListener("pointerdown", function (event) {
           event.stopPropagation();
         });
+        musicToggle.addEventListener("touchstart", function (event) {
+          event.stopPropagation();
+        }, { passive: true });
         musicToggle.addEventListener("click", function (event) {
           event.stopPropagation();
           if (music.paused) {
