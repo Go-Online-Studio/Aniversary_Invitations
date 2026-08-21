@@ -1067,6 +1067,7 @@
         overflow: hidden;
         text-align: center;
         background: #f5f0e5;
+        isolation: isolate;
       }
       footer::before {
         content: "";
@@ -1075,6 +1076,7 @@
         bottom: -40px;
         width: 190px;
         height: 190px;
+        z-index: -1;
         border-radius: 61% 39% 60% 40% / 45% 45% 55% 55%;
         background: rgba(213, 221, 196, 0.58);
       }
@@ -1094,6 +1096,7 @@
         color: #565148;
         font-size: 0.71rem;
         line-height: 1.65;
+        z-index: 5;
       }
       .credit {
         position: relative;
@@ -1234,7 +1237,6 @@
         left: -24px;
         bottom: 5px;
         width: 140px;
-        z-index: 10;
         pointer-events: none;
         transform: scaleX(-1);
       }
